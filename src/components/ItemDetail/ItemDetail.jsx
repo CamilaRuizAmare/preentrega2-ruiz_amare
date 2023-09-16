@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const ItemDetail = ({producto, isLoading}) => {
-    if(isLoading) {
+const ItemDetail = ({ producto, isLoading }) => {
+    if (isLoading) {
         return <h2 className="text-center mt-4">Cargando..</h2>
     };
-    
-    if(!producto) {
+
+    if (!producto) {
         return null
     };
 

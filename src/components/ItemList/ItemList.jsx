@@ -1,3 +1,4 @@
+import styles from './ItemList.module.css';
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
@@ -10,23 +11,23 @@ const ItemList = ({ productos, isLoading }) => {
         <div>
             <h1 className="text-center mt-2">Nuestros productos</h1>
 
-            <div className="row d-flex justify-content-center">
+            <div className="row w-100 d-flex justify-content-center">
                 {productos.map((item) => (
-                    <div className="card col-3 m-5 p-2 text-center" key={item.id}>
-                    <span className="badge rounded-pill text-bg-dark mb-1" >{item.category}</span>
-                        <Link to={`/item/${item.id}`}>
-                            <img className="card-img-top w-75" src={item.image} alt={item.name} />
-                            <div className="card-body">
-                                <span className="card-title">{item.name} </span>
-                                <p className="card-text" >{item.description}</p>
-                                <p className="card-text">${item.price}</p>
+                    <div className="col-3 m-5 text-center" key={item.id}>
+                        <span className="badge rounded-pill text-bg-dark my-1" >{item.category}</span>
+                        <Link className={styles.links} to={`/item/${item.id}`}>
+                            <img className='w-50' src={item.image} alt={item.name} />
+                            <div>
+                                <p className='card-title fs-4 fw-bold'>{item.name}</p>
+                                <span className="card-text" >{item.description}</span>
+                                <p className="card-text fs-4 fw-bold my-1">${item.price}</p>
                             </div>
                         </Link>
                     </div>
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 ItemList.propTypes = {
