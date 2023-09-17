@@ -1,28 +1,29 @@
 import PropTypes from "prop-types";
+import Loading from "../Loading/Loading";
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = ({ producto, isLoading }) => {
-    if (isLoading) {
-        return <h2 className="text-center mt-4">Cargando..</h2>
-    };
-
-    if (!producto) {
+const ItemDetail = ({product, isLoading, addItem}) => {
+    if (!product) {
         return null
     };
 
     return (
         <div>
-            <h1 className="text-center mt-2" >{producto.name}</h1>
+            {isLoading && <Loading />}
+
+            <h1 className="text-center mt-2" >{product.title}</h1>
             <div className="card m-5">
                 <div className="row g-0">
                     <div className="col-3">
-                        <img src={producto.image} alt={producto.name} />
+                        <img src={`../../${product.imageName}`} alt={product.title} />
                     </div>
                     <div className="col-8">
                         <div className="card-body text-end">
-                            <span className="card-title">{producto.name}</span>
-                            <p className="card-text">{producto.description}</p>
-                            <p className="card-text">${producto.price}</p>
+                            <span className="card-title">{product.title}</span>
+                            <p className="card-text">{product.description}</p>
+                            <p className="card-text">${product.price}</p>
                         </div>
+                        <ItemCount product={product} addItem={addItem} />
                     </div>
                 </div>
             </div>

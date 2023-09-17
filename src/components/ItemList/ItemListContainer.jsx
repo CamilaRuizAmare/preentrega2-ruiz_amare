@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
-import { filtroDeCategoria } from '../Productos';
-import ItemList from './ItemList'
+import {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import { filtroDeCategoria } from '../functions';
+import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);

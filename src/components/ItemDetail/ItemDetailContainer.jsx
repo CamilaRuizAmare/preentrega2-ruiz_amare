@@ -1,14 +1,15 @@
-import {useState, useEffect} from 'react'
-import { filtroDeProducto } from "../Productos";
+import {useState, useEffect, useContext} from 'react';
+import { filtroDeProducto } from "../functions";
 import { useParams } from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
+import CartContext from '../../context/CartContext';
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState(null);
+    const [product, setProducto] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const {id} = useParams();
-
-
+    const {addItem} = useContext(CartContext);
+    
     useEffect(() => {
         filtroDeProducto(id)
         .then((response) => {
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
     }, [id]);
 
     return (
-        <ItemDetail producto={producto} isLoading={isLoading} />
+        <ItemDetail product={product} isLoading={isLoading} addItem={addItem} />
     )
 }
 
