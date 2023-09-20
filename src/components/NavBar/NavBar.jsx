@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import CartWidget from "../Cart/CartWidget";
+import styles from './NavBar.module.css';
 
 const NavBar = () => {
     return (
@@ -8,13 +9,13 @@ const NavBar = () => {
                 <NavLink className="navbar-brand text-light ms-2" to={'/'}>NiloShop</NavLink>
                 <ul className="navbar-nav">
                     <li className="nav-item px-2">
-                        <NavLink className="nav-link text-light" to={'/category/Promociones'}>Promociones</NavLink>
+                        <NavLink className={`nav-link text-light ${styles.navLinkhvr}`} to={'/category/Promociones'}>Promociones</NavLink>
                     </li>
                     <li className="nav-item px-2">
-                        <NavLink className="nav-link text-light" to={'/category/Hogar&Deco'}>Hogar&Deco</NavLink>
+                        <NavLink className={`nav-link text-light ${styles.navLinkhvr}`} to={'/category/Hogar&Deco'}>Hogar&Deco</NavLink>
                     </li>
                     <li className="nav-item px-2">
-                        <NavLink className="nav-link text-light" to={'/category/Varios'}>Varios</NavLink>
+                        <NavLink className={`nav-link text-light ${styles.navLinkhvr}`} to={'/category/Varios'}>Varios</NavLink>
                     </li>
                 </ul>
             </div>

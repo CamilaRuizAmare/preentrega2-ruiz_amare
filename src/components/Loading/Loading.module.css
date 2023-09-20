@@ -4,19 +4,24 @@
     height: 80%;
     opacity: 1;
     animation-name: loading;
-    animation-duration: 1s;
+    animation-duration: 1.05s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
-};
+}
 
 @keyframes loading {
     0% {
         opacity: 0;
     }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
     100% {
         opacity: 1;
-    };
-};
+    }
+}
 
 
 

@@ -1,0 +1,24 @@
+.imageDetail {
+    width: 50%;
+    margin: 10px;
+}
+
+.cardTitle {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cardComplete {
+    border-radius: 30px;
+    border-color: black;
+    border-style: dotted;
+    border-width: 3px;
+}
+
+.cardDetail {
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 10px;
+
+}

@@ -1,33 +1,38 @@
 import PropTypes from "prop-types";
 import Loading from "../Loading/Loading";
 import ItemCount from "../ItemCount/ItemCount";
+import styles from './ItemDetail.module.css';
 
 const ItemDetail = ({product, isLoading, addItem}) => {
+    
+    if (isLoading) {
+        return <Loading />;
+    }
+
     if (!product) {
         return null
     };
 
     return (
-        <div>
-            {isLoading && <Loading />}
-
-            <h1 className="text-center mt-2" >{product.title}</h1>
-            <div className="card m-5">
-                <div className="row g-0">
-                    <div className="col-3">
-                        <img src={`../../${product.imageName}`} alt={product.title} />
+        <div className="container">
+            <h1 className="text-center my-4">{product.title}</h1>
+            <div className={`d-flex card p-2 ${styles.cardComplete} `}>
+                <div className="d-flex justify-items-center">
+                    <div>
+                        <img src={`../../${product.imageName}`} className={styles.imageDetail} alt={product.title} />
                     </div>
-                    <div className="col-8">
-                        <div className="card-body text-end">
-                            <span className="card-title">{product.title}</span>
-                            <p className="card-text">{product.description}</p>
-                            <p className="card-text">${product.price}</p>
+                    <div className="d-flex row align-content-center">
+                        <div className="text-center">
+                            <span className={styles.cardTitle}>{product.title}</span>
+                            <p className={styles.cardDetail}>{product.description}</p>
+                            <p>${product.price}</p>
                         </div>
+                        <div className="text-center">
                         <ItemCount product={product} addItem={addItem} />
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 };

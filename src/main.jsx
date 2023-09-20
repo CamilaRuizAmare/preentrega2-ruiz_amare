@@ -8,12 +8,12 @@ import './index.css'
 import { initializeApp } from "firebase/app"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTUI1UP-tU8CsUBq2_KbAZF-pMUzrggA0",
-  authDomain: "proyectofinalreactch.firebaseapp.com",
-  projectId: "proyectofinalreactch",
-  storageBucket: "proyectofinalreactch.appspot.com",
-  messagingSenderId: "824402145701",
-  appId: "1:824402145701:web:b1fb5391aa9e2f8a63f84c"
+  apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
+  authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIRESTORE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIRESTORE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIRESTORE_APP_ID
 };
 
 initializeApp(firebaseConfig);
