@@ -4,7 +4,7 @@ import ItemListContainer from "./components/ItemList/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer"
 import CartProvider from "./context/CartProvider"
 import CartView from "./components/Cart/CartView"
-import CheckOut from "./components/Checkout/checkOut";
+import CheckOut from "./components/Checkout/CheckOut"
 
 function App() {
 
