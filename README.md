@@ -32,7 +32,7 @@ El componente ItemList (en conjunto con su container) presentan el total de los 
 ### ItemDetail 
 En este componente, al que se accede desde cada item, el mismo muestra el detalle del producto, permitiendo agregar items al carrito.
 
-###Loading
+### Loading
 Este componente muestra una imagen mientras alguno de los componentes se monta.
 
 ## Demo
