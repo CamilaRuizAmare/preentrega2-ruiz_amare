@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 
-const CheckoutFinish = () => {
+
+const CheckoutFinish = ({tktID}) => {
 
     <div>
         <h2 className="text-center">¡Muchas gracias por tu compra!</h2>
